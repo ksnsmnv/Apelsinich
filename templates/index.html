@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+   p {
+    margin-top: 5em;
+    margin-bottom: 5em;
+   }
+</style>
+<head>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+        <title>Главная</title>
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+    <div class="line">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Меню</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+    </div>
+    <h1>Мы детский центр АпельсиныЧ и у нас есть:</h1>
+     <hr/>
+    <p> ДВА ЦЕНТРА РАЗВИТИЯ общей площадью около 200 кв. м</p>
+    <hr/>
+    <p> Более 30 КУРСОВ для детей от 1 года до 12 лет: раннее развитие, подготовка к школе, шахматы,
+        программирование, английский язык, живопись, лепка из глины, вокал, фортепиано, хореография,
+        капоэйра и  др. </p>
+    <hr/>
+    <p>2 мини ДЕТСКИХ САДА с 9.00 до 14.00, позволяющих комфортно и полезно проводить время детям
+        от 2 до 6 лет</p>
+    <hr/>
+    <p>Более 25 ПРЕПОДАВАТЕЛЕЙ – профессионалов своего дела, с авторскими методиками и
+        уникальными разработками</p>
+    <hr/>
+    <p>Команда специалистов КОРРЕКЦИИ и ПОМОЩИ детям: логопед, дефектолог, психолог, остеопат</p>
+    <hr/>
+    <p>Команда по организации ДЕТСКИХ ПРАЗДНИКОВ: детские выездные театры, аниматоры, ведущие
+            мастер-классов</p>
+    <hr/>
+    <p>Команда по организации ЛЕТНЕГО ГОРОДСКОГО ЛАГЕРЯ для детей от 6 до 10 лет: вожатые, ведущие
+            мастер-классов</p>
+    <hr/>
+    <p>Более  200 ЗАМЕЧАТЕЛЬНЫХ ДЕТЕЙ в гостях у АпельсиныЧа ежемесячно!</p>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous">
+    </script>
+    <script>
+    function myFunction(){
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
