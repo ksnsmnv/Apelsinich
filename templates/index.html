@@ -16,39 +16,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-    <div class="line">
-        <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Меню</button>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
+    <div id="navbar">
+        <a class="active" href="javascript:void(0)">Главная</a>
+        <a href="javascript:void(0)">1</a>
+        <a href="javascript:void(0)">2</a>
     </div>
-    <h1>Мы детский центр АпельсиныЧ и у нас есть:</h1>
-     <hr/>
-    <p> ДВА ЦЕНТРА РАЗВИТИЯ общей площадью около 200 кв. м</p>
-    <hr/>
-    <p> Более 30 КУРСОВ для детей от 1 года до 12 лет: раннее развитие, подготовка к школе, шахматы,
-        программирование, английский язык, живопись, лепка из глины, вокал, фортепиано, хореография,
-        капоэйра и  др. </p>
-    <hr/>
-    <p>2 мини ДЕТСКИХ САДА с 9.00 до 14.00, позволяющих комфортно и полезно проводить время детям
-        от 2 до 6 лет</p>
-    <hr/>
-    <p>Более 25 ПРЕПОДАВАТЕЛЕЙ – профессионалов своего дела, с авторскими методиками и
-        уникальными разработками</p>
-    <hr/>
-    <p>Команда специалистов КОРРЕКЦИИ и ПОМОЩИ детям: логопед, дефектолог, психолог, остеопат</p>
-    <hr/>
-    <p>Команда по организации ДЕТСКИХ ПРАЗДНИКОВ: детские выездные театры, аниматоры, ведущие
+    <div class="content">
+        <img src="../static/image/Orange.jpg" width="634" height="178" class="center">
+        <h1>Мы детский центр АпельсиныЧ и у нас есть:</h1>
+        <hr/>
+        <p> ДВА ЦЕНТРА РАЗВИТИЯ общей площадью около 200 кв. м</p>
+        <hr/>
+        <p> Более 30 КУРСОВ для детей от 1 года до 12 лет: раннее развитие, подготовка к школе, шахматы,
+            программирование, английский язык, живопись, лепка из глины, вокал, фортепиано, хореография,
+            капоэйра и  др. </p>
+        <hr/>
+        <p>2 мини ДЕТСКИХ САДА с 9.00 до 14.00, позволяющих комфортно и полезно проводить время детям
+            от 2 до 6 лет</p>
+        <hr/>
+        <p>Более 25 ПРЕПОДАВАТЕЛЕЙ – профессионалов своего дела, с авторскими методиками и
+            уникальными разработками</p>
+        <hr/>
+        <p>Команда специалистов КОРРЕКЦИИ и ПОМОЩИ детям: логопед, дефектолог, психолог, остеопат</p>
+        <hr/>
+        <p>Команда по организации ДЕТСКИХ ПРАЗДНИКОВ: детские выездные театры, аниматоры, ведущие
             мастер-классов</p>
-    <hr/>
-    <p>Команда по организации ЛЕТНЕГО ГОРОДСКОГО ЛАГЕРЯ для детей от 6 до 10 лет: вожатые, ведущие
+        <hr/>
+        <p>Команда по организации ЛЕТНЕГО ГОРОДСКОГО ЛАГЕРЯ для детей от 6 до 10 лет: вожатые, ведущие
             мастер-классов</p>
-    <hr/>
-    <p>Более  200 ЗАМЕЧАТЕЛЬНЫХ ДЕТЕЙ в гостях у АпельсиныЧа ежемесячно!</p>
+        <hr/>
+        <p>Более  200 ЗАМЕЧАТЕЛЬНЫХ ДЕТЕЙ в гостях у АпельсиныЧа ежемесячно!</p>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -60,22 +58,18 @@
             crossorigin="anonymous">
     </script>
     <script>
-    function myFunction(){
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-    window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
+    window.onscroll = function() {myFunction()};
 
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-      }
-    }
-  }
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+   }
 }
-</script>
+    </script>
 </body>
 </html>
