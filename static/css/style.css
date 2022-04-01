@@ -19,6 +19,7 @@ p {
     background-color: #FFA000;
 }
 .center {
+    margin-top: 50px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -33,7 +34,7 @@ p {
 #navbar a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #ed8f11;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -41,13 +42,13 @@ p {
 }
 
 #navbar a:hover {
-  background-color: #FFCC00;
-  color: white;
+  background-color: #f9b012;
+  font-color: white;
 }
 
 #navbar a.active {
-  background-color: white;
-  color: black;
+  background-color: #ed8f11;
+  color: white;
 }
 
 .content {
