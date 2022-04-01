@@ -6,6 +6,7 @@ h1{
     text-align: center;
     font-family: "Georgia", Georgia, serif;
     padding: 30px;
+    padding-top: 50px;
 }
 p {
     text-align: center;
@@ -63,4 +64,18 @@ p {
 
 .sticky + .content {
   padding-top: 60px;
+}
+
+.card-text {
+  padding: 0px;
+}
+
+.card {
+  width: 46%;
+  margin: 2%;
+}
+
+.b-card-grid__loop {
+  display: flex;
+  flex-flow: row wrap;
 }
