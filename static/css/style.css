@@ -1,18 +1,38 @@
 body{
-    background: white;
+  /*background-image: linear-gradient(140deg, #ffffff, #B89A68);*/
+  background-image: #ffffff;
 }
 h1{
-    color: #FFA000;
+    color: #ed8f11;
     text-align: center;
     font-family: "Georgia", Georgia, serif;
     padding: 30px;
-    padding-top: 50px;
+    padding-top: 70px;
+}
+.intro {
+  width: 35%
+  float: left;
+  font-size: 20px;
+}
+.orange__image {
+  margin: 10px;
+  border-radius: 0 0 0 0;
+  width: 60%;
+  float: right;
+}
+h5 {
+    font-family: "Georgia", Georgia, serif;
+    font-size: 32px;
+    padding-left: 30px;
+    line-height: 1.15;
 }
 p {
-    text-align: center;
-    font-size: 120%;
     font-family: "Georgia", Georgia, serif;
-    padding: 50px;
+    font-size: 25px;
+    line-height: 1.5;
+    letter-spacing: -.1px;
+    color: #1e1e1e;
+    padding-left: 50px;
 }
 .tab {
     overflow: hidden;
@@ -33,18 +53,21 @@ p {
 }
 
 #navbar a {
+  font-size: 22px;
   float: left;
   display: block;
   color: #ed8f11;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
 }
 
 #navbar a:hover {
+  color: white;
   background-color: #f9b012;
   font-color: white;
+  border: none;
+  margin: auto;
 }
 
 #navbar a.active {
@@ -66,16 +89,55 @@ p {
   padding-top: 60px;
 }
 
-.card-text {
-  padding: 0px;
+.container {
+  width: 100%;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto
+}
+
+.portal__heading {
+    text-align: center;
+    font-family: "Comic sans MS", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -.2px;
+    color: #1e1e1e;
+}
+
+.portals {
+  width: 100%;
+}
+
+portal__text {
+  text-align: center;
+}
+
+.portal__item {
+  margin: 5px;
+  background-image: linear-gradient(140deg, #ee9216, #f09d11, #f6d568);
+  padding: 2rem;
+  display: grid;
+  align-items: center;
+}
+
+a {
+  color: black;
+  background-color: transparent;
+}
+
+a:hover {
+  cursor: pointer;
+  margin: 2px;
+  border: solid;
+  border-color: #8cbc2b;
 }
 
 .card {
-  width: 46%;
-  margin: 2%;
-}
-
-.b-card-grid__loop {
-  display: flex;
-  flex-flow: row wrap;
+  background-image: linear-gradient(140deg, #ffffff, #B89A68);
+  border-radius: 0.0025rem
+  width: 200px;
+  margin: 3px;
+  margin-left: auto;
+  margin-right: auto;
 }
