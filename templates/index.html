@@ -6,8 +6,11 @@
     margin-bottom: 5em;
    }
 
+
 </style>
 <head>
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -33,7 +36,7 @@
 <div class="content">
     <h1>О нас</h1>
     <hr/>
-<!-- img class="orange__image" src="https://sun9-70.userapi.com/impf/5zowrGsi2V7qRrpG4rxq2aTLtBPo71TdHRfT6Q/XGc9euEZ7NI.jpg?size=1280x848&quality=95&sign=40c1c80a4bd30b9af3b7e99cfc3178e6&type=album"-->
+    <!-- img class="orange__image" src="https://sun9-70.userapi.com/impf/5zowrGsi2V7qRrpG4rxq2aTLtBPo71TdHRfT6Q/XGc9euEZ7NI.jpg?size=1280x848&quality=95&sign=40c1c80a4bd30b9af3b7e99cfc3178e6&type=album"-->
     <div class="intro">
         <p style="margin-top: 100px;"> Два центра развития общей площадью около 200 кв. м</p>
         <hr/>
@@ -42,30 +45,64 @@
         <hr/>
         <p>Более 200 детей в гостях у АпельсиныЧа ежемесячно!</p>
     </div>
-    <div class portals style="display:flex;">
-        <a href="" class="portal__item" target="_blank">
-            <div class="portal__heading">Курсы для детей</div>
-            <div class="portal__text">Более 30 развивающих курсов для детей от 1 до 12 лет</div>
+<hr/>
+<h1>Что у нас есть?</h1>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="" class="portal__item" target="_blank">
+                    <div class="portal__heading">Курсы для детей</div>
+                    <div class="portal__text">Более 30 развивающих курсов для детей от 1 до 12 лет</div>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="" class="portal__item" target="_blank">
+                    <div class="portal__heading">Мини детский сад</div>
+                    <div class="portal__text">Занятия с Вашими детьми от 2 до 6 лет с 9.00 до 14.00</div>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="" class="portal__item" target="_blank">
+                    <div class="portal__heading">Коррекция и помощь детям</div>
+                    <div class="portal__text">Помощь логопеда, дефектолога, психолога и остеопата от наших
+                        специалистов
+                    </div>
+                </a>
+            </div>
+
+            <div class="carousel-item">
+                <a href="" class="portal__item" target="_blank">
+                    <div class="portal__heading">Детские праздники</div>
+                    <div class="portal__text">Аниматоры, детские выездные театры, мастер-классы.</div>
+                </a>
+            </div>
+
+            <div class="carousel-item">
+                <a href="" class="portal__item" target="_blank">
+                    <div class="portal__heading">Летний лагерь</div>
+                    <div class="portal__text">Летний лагерь в городе для детей от 6 до 10 лет.</div>
+                </a>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
         </a>
-        <a href="" class="portal__item" target="_blank">
-            <div class="portal__heading">Мини детский сад</div>
-            <div class="portal__text">Занятия с Вашими детьми от 2 до 6 лет с 9.00 до 14.00</div>
-        </a>
-        <a href="" class="portal__item" target="_blank">
-            <div class="portal__heading">Коррекция и помощь детям</div>
-            <div class="portal__text">Помощь логопеда, дефектолога, психолога и остеопата от наших специалистов</div>
-        </a>
-        <a href="" class="portal__item" target="_blank">
-            <div class="portal__heading">Детские праздники</div>
-            <div class="portal__text">Аниматоры, детские выездные театры, мастер-классы.</div>
-        </a>
-        <a href="" class="portal__item" target="_blank">
-            <div class="portal__heading">Летний лагерь</div>
-            <div class="portal__text">Летний лагерь в городе для детей от 6 до 10 лет.</div>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
         </a>
     </div>
-</div>
-<hr/>
+
+
+    <hr/>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -90,6 +127,7 @@
         navbar.classList.remove("sticky");
    }
 }
+
 
 
 
