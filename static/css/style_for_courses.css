@@ -1,27 +1,3 @@
-
-h1{
-    color: #ed8f11;
-    text-align: center;
-    font-family: "Georgia", Georgia, serif;
-    padding: 30px;
-    padding-top: 70px;
-}
-.intro {
-  float: left;
-  font-size: 20px;
-}
-.orange__image {
-  margin: 10px;
-  border-radius: 0 0 0 0;
-  width: 60%;
-  float: right;
-}
-h5 {
-    font-family: "Georgia", Georgia, serif;
-    font-size: 32px;
-    padding-left: 30px;
-    line-height: 1.15;
-}
 p {
     font-family: "Georgia", Georgia, serif;
     font-size: 25px;
@@ -31,6 +7,20 @@ p {
     padding-left: 50px;
     margin-top: 5em;
     margin-bottom: 5em;
+}
+h1{
+    color: #ed8f11;
+    text-align: center;
+    font-family: "Georgia", Georgia, serif;
+    padding: 30px;
+    padding-top: 70px;
+}
+a {
+    font-family: "Georgia", Georgia, serif;
+    font-size: 25px;
+    line-height: 1.5;
+    letter-spacing: -.1px;
+    color: #1e1e1e;
 }
 .tab {
     overflow: hidden;
@@ -114,9 +104,4 @@ p {
   padding: 2rem;
   display: grid;
   align-items: center;
-}
-
-a {
-  color: black;
-  background-color: transparent;
 }
