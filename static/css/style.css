@@ -1,14 +1,60 @@
-
-h1{
-    color: #ed8f11;
+body {
+  width: 100%;
+}
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+.social a {
     text-align: center;
-    font-family: "Georgia", Georgia, serif;
-    padding: 30px;
-    padding-top: 70px;
+    width: 48px;
+    height: 48px;
+    float: left;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 0 50px rgba(0,0,0,0.1);
+    border-radius: 24px;
+    margin: 0 10px 10px 0;
+    padding: 6px;
+    color: #000;
+}
+.vk a:hover {background: #5d84ae; color: #fff;}
+h1 {
+  padding-top: 70px;
+}
+h2 {
+  width: 45%;
+  float: center;
+  font-size: 2rem;
+  padding-top: 70px;
+  color: #ed8f11;
+  padding-left: 0px;
+  text-align: center;
 }
 .intro {
+  width: 100%;
   float: left;
   font-size: 20px;
+  /*background-color: rgb(255, 200, 18);*/
+}
+.header {
+    font-weight: 400;
+    margin: 0;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #fff;
+    display: inline-block;
+    padding: 7.5px 30px;
+    border-radius: 22px 22px 0 0;
+    min-height: 44px;
+    background-color: #8abc2d;
+}
+.header-hr {
+    width: 100%;
+    z-index: 1;
+    border: none;
+    border-radius: 3px;
+    height: 5px;
+    background-color: #8abc2d;
+    margin: 0;
+    margin-bottom: 20px;
 }
 .orange__image {
   margin: 10px;
@@ -46,6 +92,7 @@ p {
 }
 
 #navbar {
+  z-index: 2;
   overflow: hidden;
   background-color: #FFA000;
 }
@@ -72,7 +119,10 @@ p {
   background-color: #ed8f11;
   color: white;
 }
-
+ul {
+  padding: 0;
+  margin: 1px;
+}
 .content {
   padding: 16px;
 }
@@ -101,9 +151,12 @@ p {
     line-height: 1.5;
     letter-spacing: -.2px;
     color: #1e1e1e;
+    text-decoration: none;
 }
 
 .portal__text {
+  color: #1e1e1e;
+  text-decoration: none;
   text-align: center;
   font-size: 20px;
 }
@@ -116,7 +169,46 @@ p {
   align-items: center;
 }
 
-a {
-  color: black;
-  background-color: transparent;
+.intro img {
+  margin-right: 100px;
+  width: 43%;
+  float: right;
+}
+section {
+  margin: 0px;
+  /*background-image: url("https://avatars.mds.yandex.net/i?id=a917aaa5c11126e61b8068e4b905a2d1-5511764-images-thumbs&n=13");
+*/}
+section .number {
+    text-align: center;
+    font-size: 4.4rem;
+    font-family: "Georgia", Georgia, serif;
+}
+section ul {
+  font-color: #00540f /*#8bbc2e*/;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+section li {
+  display: inline-grid;
+}
+.intro li {
+  width: 80%;
+  font-size: 20px;
+  margin: 10px;
+}
+.numbers {
+  margin-left: 70px;
+  width: 40%;
+}
+
+.text-center {
+  padding-top: 50px;
+}
+.row {
+}
+.text-uppercase{
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
 }
