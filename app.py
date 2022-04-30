@@ -16,29 +16,27 @@ login_manager.init_app(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    user = "Ученик Яндекс.Лицея"
-    return render_template('index.html', title='Домашняя страница',
-                           username=user)
+    return render_template('index.html', title='Домашняя страница')
 
 
 @app.route('/courses')
 def courses():
-    return render_template('courses.html')
+    return render_template('courses.html', title='Курсы')
 
 
 @app.route('/performances')
 def performances():
-    return render_template('performances.html')
+    return render_template('performances.html', title='Выступления')
 
 
 @app.route('/teachers')
 def teachers():
-    return render_template('teachers.html')
+    return render_template('teachers.html', title='Учителя')
 
 
 @app.route('/health_issues')
 def doctors():
-    return render_template('teachers.html')
+    return render_template('teachers.html', title='Помощь специалистов')
 
 
 @login_manager.user_loader
@@ -74,7 +72,7 @@ def sign_up():
         flash('Спасибо за регистрацию')
         return redirect('/')
     # если HTTP-метод GET, то просто отрисовываем форму
-    return render_template('sign_up.html', form=form)
+    return render_template('sign_up.html', form=form, title='Вход')
 
 
 #{% if user.is_authenticated %}

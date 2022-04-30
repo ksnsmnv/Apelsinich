@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="shortcut icon" href="../static/image/favicon1.ico" type="image/x-icon">
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <title>Главная</title>
-    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-</head>
+{% extends "base.html" %}
 
-
-<body>
+{% block content %}
 
 <!-- Navbar -->
 <div id="navbar" class="navbar navbar-light bg-light justify-content-between sticky">
@@ -20,7 +8,7 @@
         <a class="active" href="javascript:void(0)">О нас</a>
         <a href="javascript:void(0)">Расписание</a>
         <a href="javascript:void(0)">Прайс-лист</a>
-        <a href="javascript:void(0)">Команда преподавателей</a>
+        <a href="/teachers">Команда преподавателей</a>
     </div>
     <div style="align: middle;">
         <img src="../static/image/Orange.jpg" height="80px">
@@ -70,7 +58,7 @@
                 </div>
             </div>
         </a>
-        <a href="">
+        <a href="/kinder_garden">
             <div class="card">
                 <img src="https://sun9-79.userapi.com/s/v1/if2/A-4wO8zqHuV9E24UydjmFimH0Qac5Mokms9BFlV8jVhyExJQIdsLhAyJQiv5llj-U7Iq15QQRW_T6sITRcqVb9uh.jpg?size=1280x1280&quality=95&type=album"
                      class="card-img-top" alt="...">
@@ -80,7 +68,7 @@
                 </div>
             </div>
         </a>
-        <a href="">
+        <a href="/health_issues">
             <div class="card">
                 <img src="https://sun9-10.userapi.com/s/v1/if2/DYmuGkImGPS7cPLDgFEsHCVIufr0v1Lqyp7ub2zGAr5EakZaEENs-YU0kH_xnw9OJE8pDXyz1ggfy0tcJhAERQud.jpg?size=1280x1280&quality=95&type=album"
                      class="card-img-top" alt="...">
@@ -103,7 +91,7 @@
                 </div>
             </div>
         </a>
-        <a href="">
+        <a href="/camp">
             <div class="card">
                 <img src="https://sun9-54.userapi.com/s/v1/if2/-OP076oOTRy9lbwa7zdIuEsD75f2EyJXOXB9J2thqCmWqOo1PEPHfqeCfGahPqjT7YW791c1_u9xXiy2ovEQvqDO.jpg?size=1000x1000&quality=95&type=album"
                      class="card-img-top" alt="...">
@@ -185,33 +173,4 @@
 </footer>
 <!-- Footer -->
 
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous">
-</script>
-<script>
-    window.onscroll = function() {myFunction()};
-
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
-
-    function myFunction() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-    } else {
-        navbar.classList.remove("sticky");
-   }
-}
-
-
-
-</script>
-</body>
-</html>
+{% endblock %}
