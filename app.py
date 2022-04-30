@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+from flask import Flask, render_template
+import sqlite3
+=======
 from flask import Flask, render_template, request, flash, redirect
 from data.db_session import global_init, create_session
 from flask_login import LoginManager
@@ -5,6 +9,7 @@ from data.login import LoginForm
 from data.register import RegisterForm
 from data.users import Users
 
+>>>>>>> origin/main
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -14,23 +19,43 @@ login_manager.init_app(app)
 
 
 @app.route('/')
-@app.route('/index')
 def index():
-    user = "Ученик Яндекс.Лицея"
-    return render_template('index.html', title='Домашняя страница',
-                           username=user)
+    return render_template('index.html')
 
 
+<<<<<<< HEAD
+@app.route('/courses.html')
+=======
 @app.route('/courses')
+>>>>>>> origin/main
 def courses():
     return render_template('courses.html')
 
 
+<<<<<<< HEAD
+@app.route('/performances.html')
+=======
 @app.route('/performances')
+>>>>>>> origin/main
 def performances():
     return render_template('performances.html')
 
 
+<<<<<<< HEAD
+@app.route('/teachers.html')
+def teachers():
+    conn = sqlite3.connect('apelsin.sqlite')
+    cur = conn.cursor()
+    cur.execute("""select name, foto from teachers""")
+    dct = []
+    for name, foto in cur.fetchall():
+        dct.append({'name': name, 'foto': foto})
+    context = {'dct': dct}
+    conn.close()
+    return render_template('teachers.html', **context)
+
+
+=======
 @app.route('/teachers')
 def teachers():
     return render_template('teachers.html')
@@ -82,5 +107,6 @@ def sign_up():
   #          {% else %}
    #         <a href="/login">Войти</a>
     #        {% endif %}
+>>>>>>> origin/main
 if __name__ == '__main__':
     app.run()
