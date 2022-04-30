@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-from flask import Flask, render_template
-import sqlite3
-=======
 from flask import Flask, render_template, request, flash, redirect
 from data.db_session import global_init, create_session
 from flask_login import LoginManager
@@ -9,7 +5,6 @@ from data.login import LoginForm
 from data.register import RegisterForm
 from data.users import Users
 
->>>>>>> origin/main
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -19,51 +14,29 @@ login_manager.init_app(app)
 
 
 @app.route('/')
+@app.route('/index')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', title='Домашняя страница')
 
 
-<<<<<<< HEAD
-@app.route('/courses.html')
-=======
 @app.route('/courses')
->>>>>>> origin/main
 def courses():
-    return render_template('courses.html')
+    return render_template('courses.html', title='Курсы')
 
 
-<<<<<<< HEAD
-@app.route('/performances.html')
-=======
 @app.route('/performances')
->>>>>>> origin/main
 def performances():
-    return render_template('performances.html')
+    return render_template('performances.html', title='Выступления')
 
 
-<<<<<<< HEAD
-@app.route('/teachers.html')
-def teachers():
-    conn = sqlite3.connect('apelsin.sqlite')
-    cur = conn.cursor()
-    cur.execute("""select name, foto from teachers""")
-    dct = []
-    for name, foto in cur.fetchall():
-        dct.append({'name': name, 'foto': foto})
-    context = {'dct': dct}
-    conn.close()
-    return render_template('teachers.html', **context)
-
-
-=======
 @app.route('/teachers')
 def teachers():
-    return render_template('teachers.html')
+    return render_template('teachers.html', title='Учителя')
 
 
 @app.route('/health_issues')
 def doctors():
-    return render_template('teachers.html')
+    return render_template('teachers.html', title='Помощь специалистов')
 
 
 @login_manager.user_loader
@@ -99,7 +72,7 @@ def sign_up():
         flash('Спасибо за регистрацию')
         return redirect('/')
     # если HTTP-метод GET, то просто отрисовываем форму
-    return render_template('sign_up.html', form=form)
+    return render_template('sign_up.html', form=form, title='Вход')
 
 
 #{% if user.is_authenticated %}
@@ -107,6 +80,5 @@ def sign_up():
   #          {% else %}
    #         <a href="/login">Войти</a>
     #        {% endif %}
->>>>>>> origin/main
 if __name__ == '__main__':
     app.run()
