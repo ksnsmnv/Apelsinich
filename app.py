@@ -4,6 +4,7 @@ from flask_login import LoginManager
 from data.login import LoginForm
 from data.register import RegisterForm
 from data.users import Users
+import sqlite3
 
 
 app = Flask(__name__)
@@ -29,9 +30,18 @@ def performances():
     return render_template('performances.html', title='Выступления')
 
 
-@app.route('/teachers')
+@app.route('/teachers.html')
 def teachers():
-    return render_template('teachers.html', title='Учителя')
+    conn = sqlite3.connect('db/apelsin.sqlite')
+    cur = conn.cursor()
+    cur.execute("""select name, foto from teachers""")
+    dct = []
+    for name, foto in cur.fetchall():
+        dct.append({'name': name, 'foto': foto})
+    context = {'dct': dct}
+    conn.close()
+    return render_template('teachers.html', **context)
+
 
 
 @app.route('/health_issues')
