@@ -19,8 +19,11 @@ login_manager.init_app(app)
 
 
 @app.route('/')
+@app.route('/index')
 def index():
-    return render_template('index.html')
+    user = "Ученик Яндекс.Лицея"
+    return render_template('index.html', title='Домашняя страница',
+                           username=user)
 
 
 <<<<<<< HEAD
