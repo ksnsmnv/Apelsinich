@@ -1,40 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-<<<<<<< HEAD
-    <title>Учителя</title>
-    <link rel="shortcut icon" href="../static/image/party.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="../static/image/favicon1.ico" type="image/x-icon">
-=======
-    <title>{ title }</title>
->>>>>>> origin/main
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta charset="UTF-8">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-</head>
-<body>
-    {% for element in dct %}
-        <h3>{{ element.name }}</h3>
-        <img src="{{ element.foto }}"/>
-    {% endfor %}
-=======
-    <title>{ title }</title>
-    <link rel="stylesheet" href="../static/css/style_for_courses.css" type="text/css">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 <div id="navbar" class="navbar navbar-light bg-light justify-content-between sticky">
     <div>
-        <a class="active" href="javascript:void(0)">О нас</a>
+        <a class="/" href="javascript:void(0)">О нас</a>
         <a href="javascript:void(0)">Расписание</a>
         <a href="javascript:void(0)">Прайс-лист</a>
-        <a href="javascript:void(0)">Команда преподавателей</a>
+        <a href="active">Команда преподавателей</a>
     </div>
     <div style="align: middle;">
         <img src="../static/image/Orange.jpg" height="80px">
@@ -42,35 +14,4 @@
 </div>
 <h1>Мэри Поппинс и Новый год Декабрь 2021 г.</h1>
 
->>>>>>> origin/main
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous">
-</script>
-<<<<<<< HEAD
-<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A026d14aecd1652079c0d99a08ad96d5fa9b2c4b4f6d0d79eab950da95385515f&amp;width=781&amp;height=577&amp;lang=ru_RU&amp;scroll=true"></script>
-=======
-<script>
-    window.onscroll = function() {myFunction()};
-
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
-
-    function myFunction() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-    } else {
-        navbar.classList.remove("sticky");
-   }
-}
-
-</script>
->>>>>>> origin/main
-</body>
-</html>
+{% endblock %}
