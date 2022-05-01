@@ -1,6 +1,9 @@
 body {
   width: 100%;
 }
+.text-center img {
+  margin: 10px;
+}
 p {
     font-size: 25px;
     line-height: 1.5;
@@ -21,6 +24,18 @@ h1 {
 }
 h2 {
    padding-top: 100px;
+}
+h3 {
+    font-size: 35px;
+    margin: 40px;
+}
+h4 {
+  font-size: 20px;
+  margin: 40px;
+}
+.block {
+  width: 60%;
+  display: inline-block;
 }
 .header {
     font-size: 30px;
@@ -45,7 +60,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-li {
+.main li {
   font-size: 30px;
   margin: 50px;
   list-style-image: url("/static/image/favicon1.ico");
@@ -101,8 +116,6 @@ a {
 .content {
   padding: 16px;
 }
-
-
 .sticky + .content {
   padding-top: 60px;
 }

@@ -3,7 +3,7 @@
 {% block content %}
 <div id="navbar" class="navbar navbar-light bg-light justify-content-between sticky">
     <div>
-        <a href="/">О нас</a>
+        <a href="/index">О нас</a>
         <a href="/time-table">Расписание</a>
         <a href="/price">Прайс-лист</a>
         <a class="active">Команда преподавателей</a>
@@ -12,8 +12,61 @@
         <img src="../static/image/Orange.jpg" height="80px">
     </div>
 </div>
+<h1>Сотрудники АпельсиныЧа</h1>
+<hr class="header-hr"/>
 {% for element in dct %}
-    <h3>{{ element.name }} - {{ element.about }}</h3>
     <img src="{{ element.foto }}"/>
+    <div class="block"><h3>{{ element.name }}</h3><h4>{{ element.about }}</h4></div>
+    <hr class="header-hr"/>
 {% endfor %}
+<!-- Footer -->
+<footer class="bg-light text-center ">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-3">
+                <h5 class="text-uppercase">Центр детского развития АпельсиныЧ</h5>
+
+            </div>
+            <div class="col-lg-3">
+                <h5 class="text-uppercase">Контакты</h5>
+
+                <ul style="list-style-type: none;">
+                    <li>
+                        ✆ +7 (812) 906-05-24
+                    </li>
+                    <li>
+                        <div class="social-icons">
+                            <a href="https://vk.com/apelsinich" class="text-dark">
+                                <img src="/static/image/vk_logo.png" height="20px;"/>Группа ВК
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h5 class="text-uppercase">Режим работы</h5>
+
+                <ul style="list-style-type: none;">
+                    <li>Пн-Сб : 9.00 - 20.00</li>
+                    <li>Вс : 11.00 - 14.00</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h5 class="text-uppercase">Адреса:</h5>
+
+                <ul style="list-style-type: none;">
+                    <li>СПб, ул. Антонова-Овсеенко, 5к1</li>
+                    <li>СПб, ул. Белышева 5/6, парадная 4, домофон 254</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022
+    </div>
+
+</footer>
+<!-- Footer -->
+
 {% endblock %}

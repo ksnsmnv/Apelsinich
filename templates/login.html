@@ -5,7 +5,7 @@
     <div>
         <a href="/index">О нас</a>
         <a href="/time-table">Расписание</a>
-        <a href="">Прайс-лист</a>
+        <a href="/price">Прайс-лист</a>
         <a href="/teachers">Команда преподавателей</a>
     </div>
     <div style="align: middle;">
@@ -35,8 +35,8 @@
             {% endfor %}
         </p>
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <div style="font-size: 30px; margin-left: 50px;">{{ message }}</div>
         <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
-        <div>{{ message }}</div>
     </form>
 
 {% endblock %}

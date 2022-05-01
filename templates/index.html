@@ -110,12 +110,21 @@
         <h2 style="font-size: 38px; text-align: center; width: 100%; margin: 30px; padding-top: 0;">Как записаться на занятие?</h2>
         <hr class="header-hr"/>
         <div class="register">Позвоните нам по номеру<br/>+7 (812) 906-05-24</div>
+        {% if not user.is_authenticated %}
         <div class="register">Зарегистрируйтесь, чтобы легко<br/>бронировать занятия</div>
             <div class="register" style="width: 100%"><a href="/register">
                 <button type="button" class="btn btn-outline-light">Зарегистрироваться</button></a>
             <a href="/login">
                 <button type="button" class="btn btn-outline-light">Войти</button></a>
         </div>
+        {% else %}
+        <div class="register">Бронируйте зантия<br/>через Ваш личный профиль</div>
+            <div class="register" style="width: 100%"><a href="/register">
+                <button type="button" class="btn btn-outline-light">Записаться на занятие</button></a>
+            <a href="/logout">
+                <button type="button" class="btn btn-outline-light">Выйти</button></a>
+        </div>
+        {% endif %}
         <hr class="header-hr"/>
     </div>
     <!-- Sign_in screen -->
@@ -124,7 +133,6 @@
 <!-- Content -->
 
 <hr/>
-
 <!-- Footer -->
 <footer class="bg-light text-center ">
     <div class="container p-4">
@@ -143,7 +151,7 @@
                     <li>
                         <div class="social-icons">
                             <a href="https://vk.com/apelsinich" class="text-dark">
-                                <img src="/static/image/vk_logo.png" height="20px;"/> Группа ВК
+                                <img src="/static/image/vk_logo.png" height="20px;"/>Группа ВК
                             </a>
                         </div>
                     </li>

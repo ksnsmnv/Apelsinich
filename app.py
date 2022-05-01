@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, flash, redirect
 from data.db_session import global_init, create_session
-from flask_login import LoginManager
+from flask_login import LoginManager, login_user, current_user, logout_user, login_required
+from werkzeug.security import check_password_hash
 from data.login import LoginForm
 from data.register import RegisterForm
 from data.users import Users
 import sqlite3
-
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -17,7 +17,9 @@ login_manager.init_app(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', title='Домашняя страница', style_file='/static/css/style.css')
+    print(current_user)
+    return render_template('index.html', title='Домашняя страница',
+                           style_file='/static/css/style.css', user=current_user)
 
 
 @app.route('/time-table')
@@ -28,6 +30,11 @@ def time_table():
 @app.route('/courses')
 def courses():
     return render_template('courses.html', title='Курсы', style_file='/static/css/style_for_courses.css')
+
+
+@app.route('/price')
+def price():
+    return render_template('price.html', title='Цены', style_file='/static/css/style_for_courses.css')
 
 
 @app.route('/performances')
@@ -45,28 +52,40 @@ def teachers():
         dct.append({'name': name, 'foto': foto, 'about': about})
     context = {'dct': dct}
     conn.close()
-    return render_template('teachers.html', style_file='/static/css/style_for_courses.css', **context)
+    return render_template('teachers.html', style_file='/static/css/style_for_courses.css', title='Учителя', **context)
 
 
 @login_manager.user_loader
 def load_user(user_id):
-    db_sess = db_session.create_session()
-    return db_sess.query(User).get(user_id)
+    db_sess = create_session()
+    return db_sess.query(Users).get(user_id)
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect("/")
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if form.validate_on_submit():
-        db_sess = create_session()
-        user = db_sess.query(Users).filter(Users.email == form.email.data).first()
-        if user and user.check_password(form.password.data):
-            login_user(user, remember=form.remember_me.data)
-            return redirect("/index")
-        return render_template('login.html',
-                               message="Неправильный логин или пароль",
-                               form=form)
-    return render_template('login.html', title='Авторизация', form=form)
+    try:
+        if form.validate_on_submit():
+            db_sess = create_session()
+            user = db_sess.query(Users).filter(Users.email == form.email.data).first()
+            print(user, user.password, form.password.data)
+            if user and user.check_password_hash(form.password.data, form.confirm.data):
+                login_user(user, remember=form.remember_me.data)
+                return redirect("/index")
+            return render_template('login.html', style_file='/static/css/style_for_courses.css',
+                                   message="Неправильный логин или пароль", form=form)
+    except Exception:
+        return render_template('login.html', title='Авторизация',
+                               message="Такого пользователя нет в базе данных, зарегистрируйтесь!",
+                               style_file='/static/css/style_for_courses.css', form=form)
+    return render_template('login.html', style_file='/static/css/style_for_courses.css', form=form)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -81,13 +100,8 @@ def sign_up():
         flash('Спасибо за регистрацию')
         return redirect('/')
     # если HTTP-метод GET, то просто отрисовываем форму
-    return render_template('sign_up.html', form=form, title='Вход')
+    return render_template('sign_up.html', form=form, title='Вход', style_file='/static/css/style_for_courses.css')
 
 
-#{% if user.is_authenticated %}
- #           <a href="/logout">Выйти</a>
-  #          {% else %}
-   #         <a href="/login">Войти</a>
-    #        {% endif %}
 if __name__ == '__main__':
     app.run()
