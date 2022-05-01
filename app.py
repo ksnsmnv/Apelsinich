@@ -16,12 +16,12 @@ login_manager.init_app(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', title='Домашняя страница')
+    return render_template('index.html', title='Домашняя страница', style_file='/static/css/style.css')
 
 
 @app.route('/courses')
 def courses():
-    return render_template('courses.html', title='Курсы')
+    return render_template('courses.html', title='Курсы', style_file='/static/css/style_for_courses.css')
 
 
 @app.route('/performances')

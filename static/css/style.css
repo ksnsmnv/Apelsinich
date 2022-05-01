@@ -1,7 +1,6 @@
 body {
   width: 100%;
 }
-
 h1 {
   font-size: 60px;
   padding-bottom: 20px;
@@ -21,7 +20,6 @@ h2 {
   width: 100%;
   float: left;
   font-size: 20px;
-  /*background-color: rgb(255, 200, 18);*/
 }
 .header {
     font-weight: 400;
@@ -52,13 +50,11 @@ h2 {
   float: right;
 }
 h5 {
-    font-family: "Georgia", Georgia, serif;
     font-size: 32px;
     padding-left: 30px;
     line-height: 1.15;
 }
 p {
-    font-family: "Georgia", Georgia, serif;
     font-size: 25px;
     line-height: 1.5;
     letter-spacing: -.1px;
@@ -108,8 +104,8 @@ p {
   color: #343a40;
 }
 .card-title {
-  color: #343a40;
-  font-family: "Georgia", Georgia, serif;
+  font-weight: bold;
+  color: #ed8f11;
   font-size: 32px;
 }
 .card-body {
@@ -174,12 +170,10 @@ ul {
 }
 section {
   margin: 0px;
-  /*background-image: url("https://avatars.mds.yandex.net/i?id=a917aaa5c11126e61b8068e4b905a2d1-5511764-images-thumbs&n=13");
-*/}
+}
 section .number {
     text-align: center;
     font-size: 4.4rem;
-    font-family: "Georgia", Georgia, serif;
 }
 section ul {
   font-color: #00540f /*#8bbc2e*/;
@@ -209,4 +203,16 @@ section li {
   margin: 0;
   padding: 0;
   font-size: 20px;
+}
+.register {
+  width: 48%;
+  display: inline-grid;
+  text-align: center;
+  font-size: 30px;
+}
+.btn {
+  background-color: #ed8f11;
+  margin: 10px;
+  height: 50px;
+  font-size: 30px;
 }

@@ -1,5 +1,4 @@
 p {
-    font-family: "Georgia", Georgia, serif;
     font-size: 25px;
     line-height: 1.5;
     letter-spacing: -.1px;
@@ -10,7 +9,6 @@ p {
 }
 h1 {
     color: #ed8f11;
-    font-family: "Georgia", Georgia, serif;
     padding-left: 30px;
     padding-top: 60px;
     text-align: left;
@@ -49,7 +47,6 @@ li {
 }
 
 a {
-    font-family: "Georgia", Georgia, serif;
     font-size: 25px;
     line-height: 1.5;
     letter-spacing: -.1px;
