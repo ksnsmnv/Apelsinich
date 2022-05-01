@@ -39,10 +39,10 @@ def performances():
 def teachers():
     conn = sqlite3.connect('db/apelsin.sqlite')
     cur = conn.cursor()
-    cur.execute("""select name, foto from teachers""")
+    cur.execute("""select name, foto, about from teachers""")
     dct = []
-    for name, foto in cur.fetchall():
-        dct.append({'name': name, 'foto': foto})
+    for name, foto, about in cur.fetchall():
+        dct.append({'name': name, 'foto': foto, 'about': about})
     context = {'dct': dct}
     conn.close()
     return render_template('teachers.html', style_file='/static/css/style_for_courses.css', **context)

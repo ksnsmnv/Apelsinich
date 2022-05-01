@@ -3,9 +3,9 @@
 {% block content %}
 <div id="navbar" class="navbar navbar-light bg-light justify-content-between sticky">
     <div>
-        <a href="/index">О нас</a>
+        <a href="/">О нас</a>
         <a href="/time-table">Расписание</a>
-        <a href="javascript:void(0)">Прайс-лист</a>
+        <a href="/price">Прайс-лист</a>
         <a class="active">Команда преподавателей</a>
     </div>
     <div style="align: middle;">
@@ -13,7 +13,7 @@
     </div>
 </div>
 {% for element in dct %}
-    <h3>{{ element.name }}</h3>
+    <h3>{{ element.name }} - {{ element.about }}</h3>
     <img src="{{ element.foto }}"/>
 {% endfor %}
 {% endblock %}
