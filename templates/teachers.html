@@ -4,14 +4,16 @@
 <div id="navbar" class="navbar navbar-light bg-light justify-content-between sticky">
     <div>
         <a href="/index">О нас</a>
-        <a href="javascript:void(0)">Расписание</a>
+        <a href="/time-table">Расписание</a>
         <a href="javascript:void(0)">Прайс-лист</a>
-        <a href="active" href="javascript:void(0)">Команда преподавателей</a>
+        <a href="active">Команда преподавателей</a>
     </div>
     <div style="align: middle;">
         <img src="../static/image/Orange.jpg" height="80px">
     </div>
 </div>
-<h1>Мэри Поппинс и Новый год Декабрь 2021 г.</h1>
-
+{% for element in dct %}
+    <h3>{{ element.name }}</h3>
+    <img src="{{ element.foto }}"/>
+{% endfor %}
 {% endblock %}
