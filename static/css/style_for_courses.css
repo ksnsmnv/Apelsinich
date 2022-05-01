@@ -1,3 +1,6 @@
+body {
+  width: 100%;
+}
 p {
     font-size: 25px;
     line-height: 1.5;
@@ -9,9 +12,12 @@ p {
 }
 h1 {
     color: #ed8f11;
+    font-size: 50px;
     padding-left: 30px;
-    padding-top: 60px;
-    text-align: left;
+    padding-top: 30px;
+    text-align: center;
+    margin: 20px;
+    font-weight: 0;
 }
 h2 {
    padding-top: 100px;
@@ -20,7 +26,6 @@ h2 {
     font-size: 30px;
     margin: 0;
     margin-left: 50px;
-    font-weight: 100;
     color: #fff;
     display: inline-block;
     padding: 7.5px 30px;

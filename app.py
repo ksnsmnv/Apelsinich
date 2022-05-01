@@ -20,6 +20,11 @@ def index():
     return render_template('index.html', title='Домашняя страница', style_file='/static/css/style.css')
 
 
+@app.route('/time-table')
+def time_table():
+    return render_template('time-table.html', title='Расписание', style_file='/static/css/style_for_courses.css')
+
+
 @app.route('/courses')
 def courses():
     return render_template('courses.html', title='Курсы', style_file='/static/css/style_for_courses.css')
@@ -27,10 +32,10 @@ def courses():
 
 @app.route('/performances')
 def performances():
-    return render_template('performances.html', title='Выступления')
+    return render_template('performances.html', title='Выступления', style_file='/static/css/style_for_courses.css')
 
 
-@app.route('/teachers.html')
+@app.route('/teachers')
 def teachers():
     conn = sqlite3.connect('db/apelsin.sqlite')
     cur = conn.cursor()
@@ -40,13 +45,7 @@ def teachers():
         dct.append({'name': name, 'foto': foto})
     context = {'dct': dct}
     conn.close()
-    return render_template('teachers.html', **context)
-
-
-
-@app.route('/health_issues')
-def doctors():
-    return render_template('teachers.html', title='Помощь специалистов')
+    return render_template('teachers.html', style_file='/static/css/style_for_courses.css', **context)
 
 
 @login_manager.user_loader
