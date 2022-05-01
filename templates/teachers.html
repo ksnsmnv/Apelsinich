@@ -4,7 +4,7 @@
 <div id="navbar" class="navbar navbar-light bg-light justify-content-between sticky">
     <div>
         <a href="/">О нас</a>
-        <a href="time-table.html">Расписание</a>
+        <a href="/time-table.html">Расписание</a>
         <a href="javascript:void(0)">Прайс-лист</a>
         <a class="active" href="/teachers.html">Команда преподавателей</a>
     </div>
@@ -13,7 +13,7 @@
     </div>
 </div>
 {% for element in dct %}
-    <h3>{{ element.name }}</h3>
+    <h3>{{ element.name }} - {{ element.about }}</h3>
     <img src="{{ element.foto }}"/>
 {% endfor %}
 {% endblock %}
