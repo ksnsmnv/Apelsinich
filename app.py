@@ -22,9 +22,9 @@ def index():
                            style_file='/static/css/style.css', user=current_user)
 
 
-@app.route('/time-table')
+@app.route('/time_table')
 def time_table():
-    return render_template('time-table.html', title='Расписание', style_file='/static/css/style_for_courses.css')
+    return render_template('time_table.html', title='Расписание', style_file='/static/css/style_for_courses.css')
 
 
 @app.route('/courses')
@@ -46,10 +46,10 @@ def performances():
 def teachers():
     conn = sqlite3.connect('db/apelsin.sqlite')
     cur = conn.cursor()
-    cur.execute("""select name, foto, about from teachers""")
+    cur.execute("""select surname, photo, about from teachers""")
     dct = []
-    for name, foto, about in cur.fetchall():
-        dct.append({'name': name, 'foto': foto, 'about': about})
+    for surname, photo, about  in cur.fetchall():
+        dct.append({'name': surname, 'foto': photo, 'about': about})
     context = {'dct': dct}
     conn.close()
     return render_template('teachers.html', style_file='/static/css/style_for_courses.css', title='Учителя', **context)
