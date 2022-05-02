@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="navbar" class="navbar navbar-light bg-light justify-content-between sticky">
+    <div>
+        <a href="/">О нас</a>
+        <a href="time_table">Расписание</a>
+        <a href="price">Прайс-лист</a>
+        <a href="teachers">Команда преподавателей</a>
+        <a class="active" href="contacts">Контакты</a>
+    </div>
+    <div style="align: middle;">
+        <img src="../static/image/Orange.jpg" height="80px">
+    </div>
+</div>
+    <h1>Связь с нами</h1>
+    <h1 class="header">Разработчики</h1>
+    <hr class="header-hr"/>
+    <div class="row">
+        <div class="col-lg-3">
+            <h4>Винникова Анастасия</h4>
+            <a href="https://vk.com/id470261217"><h4>Страница в вк</h4></a>
+        </div>
+        <div class="col-lg-3">
+            <h4>Семенова Ксения</h4>
+            <a href="https://vk.com/semenova.ksenia"><h4>Страница в вк</h4></a>
+        </div>
+    </div>
+    <h1 class="header">Директор Апельсиныча</h1>
+    <hr class="header-hr"/>
+    <h4>Суханова Варвара</h4>
+    <div class="row">
+        <div class="col-lg-3">
+            <a href="https://vk.com/id2641231"><h4>Страница в вк</h4></a>
+        </div>
+        <div class="col-lg-3">
+            <h4>+7 (921) 906-05-24</h4>
+        </div>
+    </div>
+    <h1 class="header">Наше местоположение</h1>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A026d14aecd1652079c0d99a08ad96d5fa9b2c4b4f6d0d79eab950da95385515f&amp;width=781&amp;height=577&amp;lang=ru_RU&amp;scroll=true"></script>
+{% endblock %}

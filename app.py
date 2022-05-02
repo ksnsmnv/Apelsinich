@@ -27,6 +27,11 @@ def time_table():
     return render_template('time_table.html', title='Расписание', style_file='/static/css/style_for_courses.css')
 
 
+@app.route('/contacts')
+def contacts():
+    return render_template('contacts.html', title='Контакты', style_file='/static/css/style_for_courses.css')
+
+
 @app.route('/courses')
 def courses():
     return render_template('courses.html', title='Курсы', style_file='/static/css/style_for_courses.css')
