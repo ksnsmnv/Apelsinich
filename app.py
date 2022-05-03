@@ -85,7 +85,7 @@ def teachers():
 @login_manager.user_loader
 def load_user(user_id):
     db_sess = create_session()
-    return db_sess.query(Users).get(user_id)
+    return db_sess.query(Names).get(user_id)
 
 
 @app.route('/logout')
@@ -104,6 +104,8 @@ def login():
             user = db_sess.query(Names).filter(Names.surname == form.name.data).first()
             print(user.surname, user.password, form.name.data, form.password.data)
             if user and user.password == form.password.data and user.surname == form.name.data:
+                print(form.remember_me.data)
+                login_user(user, remember=form.remember_me.data)
                 return redirect("/index")
             return render_template('login.html', style_file='/static/css/style_for_courses.css',
                                    message="Неправильный логин или пароль", form=form)

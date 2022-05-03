@@ -2,9 +2,10 @@ import datetime
 import sqlalchemy
 from sqlalchemy import orm
 from data.db_session import SqlAlchemyBase
+from flask_login import UserMixin
 
 
-class Names(SqlAlchemyBase):
+class Names(SqlAlchemyBase, UserMixin):
     __tablename__ = 'teachers'
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
