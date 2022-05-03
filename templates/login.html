@@ -15,6 +15,7 @@
 </div>
 
 <h1>Авторизация</h1>
+<div style="font-size: 30px; margin-left: 50px; color: red;">{{ message }}</div>
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
@@ -36,8 +37,7 @@
             {% endfor %}
         </p>
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <div style="font-size: 30px; margin-left: 50px;">{{ message }}</div>
-        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        <p>{{ form.submit(type="submit", class="btn btn-light") }}</p>
     </form>
 
 {% endblock %}

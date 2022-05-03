@@ -215,3 +215,8 @@ section li {
   height: 50px;
   font-size: 30px;
 }
+.image {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
