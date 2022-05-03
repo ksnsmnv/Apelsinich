@@ -14,18 +14,13 @@
     </div>
 </div>
 
-<h1>Авторизация</h1>
+<h1>Авторизация сотрудников</h1>
 <div style="font-size: 30px; margin-left: 50px; color: red;">{{ message }}</div>
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
-            {{ form.email.label }}<br>
-            {{ form.email(class="form-control", type="email") }}<br>
-            {% for error in form.email.errors %}
-                <div class="alert alert-danger" role="alert">
-                    {{ error }}
-                </div>
-            {% endfor %}
+            {{ form.name.label }}<br>
+            {{ form.name(class="form-control", type="name") }}<br>
         </p>
         <p>
             {{ form.password.label }}<br>

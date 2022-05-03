@@ -11,7 +11,12 @@
         <a href="teachers">Команда преподавателей</a>
         <a href="contacts">Контакты</a>
     </div>
-    <div style="align: middle;">
+    <div>
+        {% if not user.is_authenticated %}
+        <a href="/login" class="log">Login</a>
+        {% else %}
+        <a href="/logout" class="log">Logout</a>
+        {% endif %}
         <img src="../static/image/Orange.jpg" height="80px">
     </div>
 </div>
@@ -19,6 +24,8 @@
 
 <!-- Content -->
 <div class="content">
+
+
     <!-- Start screen -->
     <div class="intro">
         <h1>Центр детского развития АпельсиныЧ</h1>
@@ -53,7 +60,8 @@
                 <img src="https://sun9-81.userapi.com/s/v1/if2/Y0H9Ga6pKBYH_C_8cT2Havymjvu0GOkQEh8EG6c0kUa2g-JpxpqepHVpzzB589qCtiiUX4YKFI2Hh8tU92G1k_MH.jpg?size=1280x848&quality=95&type=album"
                      class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Мини детский сад</h5><hr/>
+                    <h5 class="card-title">Мини детский сад</h5>
+                    <hr/>
                     <p class="card-text">Занятия с Вашими детьми от 2 до 6 лет с 9.00 до 14.00</p>
                 </div>
             </div>
@@ -63,7 +71,8 @@
                 <img src="https://sun9-48.userapi.com/s/v1/if2/hyzQI9TZs0qRK9YIYbgGKG2Nbr0kPmxebJ2jJDyGeHI6ktNU32VJQ3XIQ_rTsKa6uHg03A5OGl4kClVA2MYRE35L.jpg?size=1280x848&quality=95&type=album"
                      class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Курсы для детей</h5><hr/>
+                    <h5 class="card-title">Курсы для детей</h5>
+                    <hr/>
                     <p class="card-text">Более 30 развивающих курсов для детей от 1 до 12 лет</p>
 
                 </div>
@@ -74,7 +83,8 @@
                 <img src="/static/image/health.png"
                      class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Коррекция и помощь детям</h5><hr/>
+                    <h5 class="card-title">Коррекция и помощь детям</h5>
+                    <hr/>
                     <p class="card-text">Помощь логопеда, дефектолога, психолога и остеопата от наших
                         специалистов</p>
 
@@ -86,7 +96,8 @@
                 <img src="https://sun9-81.userapi.com/s/v1/if2/RV_3livL3SkLyJfSuognLqohL_umFF1pZsjhP41jIuuLsewRqeTlb8_2Vdi4k3baeBLpJ2kLtQstpZbdrNQzPxqf.jpg?size=1280x960&quality=96&type=album"
                      class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Летний лагерь</h5><hr/>
+                    <h5 class="card-title">Летний лагерь</h5>
+                    <hr/>
                     <p class="card-text">Летний лагерь в городе для детей от 6 до 10 лет.</p>
 
                 </div>
@@ -97,7 +108,8 @@
                 <img src="https://sun9-52.userapi.com/s/v1/if2/eyDfmagmP7eBm4S47HoJF_Dl-9JDYN_UcrN3wZGtaw3eHTnFu5vGmW6EBxOF5JfWAOng7gvw6zaL6xq4xKfZ52ZQ.jpg?size=1280x848&quality=95&type=album"
                      alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Детские праздники и мастер-классы</h5><hr/>
+                    <h5 class="card-title">Детские праздники и мастер-классы</h5>
+                    <hr/>
                     <p class="card-text">Аниматоры, детские выездные театры, мастер-классы.</p>
 
                 </div>
@@ -106,37 +118,7 @@
     </div>
     <!-- Cards -->
 
-    <!-- Sign-in screen -->
-    <div>
-        <h2 style="font-size: 38px; text-align: center; width: 100%; margin: 30px; padding-top: 0;">Как записаться на занятие?</h2>
-        <hr class="header-hr"/>
-        <div class="register">Позвоните нам по номеру<br/>+7 (812) 906-05-24</div>
-        {% if not user.is_authenticated %}
-        <div class="register">Зарегистрируйтесь, чтобы легко<br/>бронировать занятия</div>
-            <div class="register" style="width: 100%"><a href="/register">
-                <button type="button" class="btn btn-outline-light">Зарегистрироваться</button></a>
-            <a href="/login">
-                <button type="button" class="btn btn-outline-light">Войти</button></a>
-        </div>
-        {% else %}
-        <div class="register">Бронируйте зантия<br/>через Ваш личный профиль</div>
-            <div class="register" style="width: 100%">
-                <a href="/lesson">
-                <button type="button" class="btn btn-outline-light">Записаться на занятие</button></a>
-            <a href="/logout">
-                <button type="button" class="btn btn-outline-light">Выйти</button></a>
-        </div>
-        {% endif %}
-        <hr class="header-hr"/>
-    </div>
-    <!-- Sign_in screen -->
 
-    <!-- API  -->
-    <div>
-        <h2 style="font-size: 38px; text-align: center; width: 100%; margin: 30px; padding-top: 0;">Где нас найти?</h2>
-        <img class="image" src="static/image/map.png" alt="Просто. Загуглите. Наш. Адрес."/>
-    </div>
-    <!-- API  -->
 </div>
 <!-- Content -->
 

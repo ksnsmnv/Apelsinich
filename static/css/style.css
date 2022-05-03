@@ -203,12 +203,6 @@ section li {
   padding: 0;
   font-size: 20px;
 }
-.register {
-  width: 48%;
-  display: inline-grid;
-  text-align: center;
-  font-size: 30px;
-}
 .btn {
   background-color: #ed8f11;
   margin: 10px;
@@ -219,4 +213,7 @@ section li {
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+.log {
+  margin: 12px;
 }

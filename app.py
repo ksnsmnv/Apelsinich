@@ -3,9 +3,9 @@ from data.db_session import global_init, create_session
 from flask_login import LoginManager, login_user, current_user, logout_user, login_required
 from werkzeug.security import check_password_hash
 from data.login import LoginForm
-from data.register import RegisterForm
-from data.users import Users
+from data.teachers_names import Names
 import sqlite3
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -64,32 +64,6 @@ def price():
     return render_template('price.html', title='Цены', style_file='/static/css/style_for_courses.css')
 
 
-@app.route('/lesson')
-def lesson():
-    try:
-        print('register')
-        form = RegisterForm()
-        if request.method == 'POST' and form.validate():
-            db_sess = create_session()
-            user = Users()
-            print('register2')
-            if type(form.day.data) is datetime.date:
-                print('register3')
-                user.name, user.lesson, user.day = current_user, form.lesson.data, form.day.data
-                db_sess.add(user)
-                db_sess.commit()
-                return redirect('/')
-            else:
-                return render_template('lesson.html', form=form, title='Запись', message='Дата введена неправильно',
-                                       style_file='/static/css/style_for_courses.css')
-        return render_template('lesson.html', form=form, title='Запись',
-                               style_file='/static/css/style_for_courses.css')
-    except Exception:
-        message = "Возникла ошибка при обработке формы"
-        return render_template('lesson.html', form=form, title='Запись', message=message,
-                               style_file='/static/css/style_for_courses.css')
-
-
 @app.route('/performances')
 def performances():
     return render_template('performances.html', title='Выступления', style_file='/static/css/style_for_courses.css')
@@ -101,7 +75,7 @@ def teachers():
     cur = conn.cursor()
     cur.execute("""select surname, photo, about from teachers""")
     dct = []
-    for surname, photo, about  in cur.fetchall():
+    for surname, photo, about in cur.fetchall():
         dct.append({'name': surname, 'foto': photo, 'about': about})
     context = {'dct': dct}
     conn.close()
@@ -127,42 +101,18 @@ def login():
     try:
         if form.validate_on_submit():
             db_sess = create_session()
-            user = db_sess.query(Users).filter(Users.email == form.email.data).first()
-            print(user, user.password, form.password.data)
-            if user and user.password == form.password.data:
-                login_user(user, remember=form.remember_me.data)
+            user = db_sess.query(Names).filter(Names.surname == form.name.data).first()
+            print(user.surname, user.password, form.name.data, form.password.data)
+            if user and user.password == form.password.data and user.surname == form.name.data:
                 return redirect("/index")
             return render_template('login.html', style_file='/static/css/style_for_courses.css',
                                    message="Неправильный логин или пароль", form=form)
     except Exception as Ex:
+        print(Ex)
         return render_template('login.html', title='Авторизация',
-                               message="Такого пользователя нет в базе данных, зарегистрируйтесь!",
+                               message="Возникла ошибка при обработке формы",
                                style_file='/static/css/style_for_courses.css', form=form)
     return render_template('login.html', style_file='/static/css/style_for_courses.css', form=form)
-
-
-@app.route('/register', methods=['GET', 'POST'])
-def sign_up():
-    try:
-        form = RegisterForm()
-        if request.method == 'POST' and form.validate():
-            db_sess = create_session()
-            user = Users()
-            user.name, user.email, user.password = form.name.data, form.email.data, form.password.data
-            db_sess.add(user)
-            db_sess.commit()
-            flash('Спасибо за регистрацию')
-            if user:
-                login_user(user, remember=form.remember_me.data)
-                return redirect("/index")
-            return redirect('/')
-        # если HTTP-метод GET, то просто отрисовываем форму
-        return render_template('sign_up.html', form=form, title='Вход',
-                               style_file='/static/css/style_for_courses.css')
-    except Exception:
-        message = 'Этот логин уже занят'
-        return render_template('sign_up.html', form=form, title='Вход', message=message,
-                               style_file='/static/css/style_for_courses.css')
 
 
 if __name__ == '__main__':
