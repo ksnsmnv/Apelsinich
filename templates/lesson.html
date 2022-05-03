@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="navbar" class="navbar navbar-light bg-light justify-content-between sticky">
+    <div>
+        <a class="active" href="/index">О нас</a>
+        <a href="/time-table">Расписание</a>
+        <a href="/price">Прайс-лист</a>
+        <a href="/price">Команда преподавателей</a>
+    </div>
+    <div style="align: middle;">
+        <img src="../static/image/Orange.jpg" height="80px">
+    </div>
+</div>
+<h1>Записаться на занятие</h1>
+<form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div style="font-size: 30px; margin-left: 50px; color: red;">{{ message }}</div>
+        <p>
+            Название занятия<br>
+            {{ form.name(class="form-control", type="lesson") }}<br>
+        </p>
+        <p>
+            Дата и время занятия<br>
+            {{ form.name(class="form-control", type="day") }}<br>
+        </p>
+        <p>{{ form.submit(type="submit", class="btn btn-light") }}</p>
+
+    </form>
+
+
+{% endblock %}
