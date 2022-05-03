@@ -13,4 +13,5 @@ class Names(SqlAlchemyBase):
     photo = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     subject = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("subjects.id"),
                                 index=True, unique=True, nullable=True)
+    password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     name = orm.relation("Subjects")
