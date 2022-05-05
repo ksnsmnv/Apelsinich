@@ -5,6 +5,7 @@ from werkzeug.security import check_password_hash
 from data.login import LoginForm
 from data.teachers_names import Names
 import sqlite3
+import requests
 
 
 app = Flask(__name__)
@@ -15,8 +16,6 @@ login_manager.init_app(app)
 
 
 def api_location():
-    import requests
-
     map_request = "http://static-maps.yandex.ru/1.x/?ll=30.460838,59.908141&spn=0.009,0.009&l=map&pt=30.459679,59.906147,org~30.455727,59.909856,org"
     response = requests.get(map_request)
 
