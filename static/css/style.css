@@ -89,6 +89,7 @@ p {
   width: 49%;
   display: inline-grid;
   padding: 10px;
+  border-color: #fff;
 }
 .card:hover {
   padding: 0;
@@ -159,7 +160,7 @@ ul {
   width: 100%;
   position: relative;
   margin-right: auto;
-  margin-left: auto
+  margin-left: auto;
 }
 
 .intro img {
@@ -195,8 +196,6 @@ section li {
 
 .text-center {
   padding-top: 50px;
-}
-.row {
 }
 .text-uppercase{
   margin: 0;
